@@ -1,8 +1,5 @@
 <script setup lang="ts">
-const posts = await queryCollection('posts')
-  .where('published', '=', true)
-  .order('date', 'DESC')
-  .all()
+const posts = await usePublishedPosts()
 </script>
 
 <template>

@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const latestPosts = await queryCollection('posts')
-  .where('published', '=', true)
-  .order('date', 'DESC')
-  .limit(3)
-  .all()
+const latestPosts = await useLatestPosts(3)
 </script>
 
 <template>

@@ -10,7 +10,7 @@ export default defineContentConfig({
         description: z.string(),
         date: z.string(),
         tags: z.array(z.string()).default([]),
-        published: z.boolean().default(true),
+        draft: z.boolean().default(false),
         readingTime: z.string().optional(),
         location: z.string().optional()
       })
