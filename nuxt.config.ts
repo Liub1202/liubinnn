@@ -1,5 +1,10 @@
 export default defineNuxtConfig({
   modules: ['@nuxt/content', '@nuxtjs/tailwindcss'],
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
+  },
   css: ['~/assets/css/main.css'],
   devtools: {
     enabled: true
