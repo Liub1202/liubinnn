@@ -14,6 +14,11 @@ export type BlogPostDetail = BlogPostSummary & {
   body: unknown
 }
 
+export type AdjacentPosts = {
+  previous: BlogPostSummary | null
+  next: BlogPostSummary | null
+}
+
 type RawPost = {
   path: string
   title: string
@@ -27,6 +32,16 @@ type RawPost = {
 }
 
 const normalizeTag = (tag: string): string => tag.trim().toLowerCase()
+
+const comparePostByDateAsc = (left: BlogPostSummary, right: BlogPostSummary): number => {
+  const dateDiff = new Date(left.date).getTime() - new Date(right.date).getTime()
+
+  if (dateDiff !== 0) {
+    return dateDiff
+  }
+
+  return left.path.localeCompare(right.path)
+}
 
 const normalizePost = (post: RawPost): BlogPostSummary => ({
   path: post.path,
@@ -83,5 +98,23 @@ export const usePostDetailBySlug = async (slug: string): Promise<BlogPostDetail 
   return {
     ...normalized,
     body: (post as RawPost).body
+  }
+}
+
+export const useAdjacentPostsBySlug = async (slug: string): Promise<AdjacentPosts> => {
+  const posts = await usePublishedPosts()
+  const orderedPosts = [...posts].sort(comparePostByDateAsc)
+  const currentIndex = orderedPosts.findIndex((post) => post.slug === slug)
+
+  if (currentIndex === -1) {
+    return {
+      previous: null,
+      next: null
+    }
+  }
+
+  return {
+    previous: orderedPosts[currentIndex - 1] ?? null,
+    next: orderedPosts[currentIndex + 1] ?? null
   }
 }

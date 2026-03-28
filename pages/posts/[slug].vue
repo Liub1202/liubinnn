@@ -5,6 +5,7 @@ const route = useRoute()
 const slug = route.params.slug as string
 
 const post = await usePostDetailBySlug(slug)
+const adjacentPosts = await useAdjacentPostsBySlug(slug)
 
 if (!post) {
   throw createError({
@@ -66,6 +67,48 @@ useHead({
     <article class="post-body mx-auto w-full max-w-3xl">
       <ContentRenderer :value="post" />
     </article>
+
+    <section
+      v-if="adjacentPosts.previous || adjacentPosts.next"
+      class="mx-auto grid w-full max-w-3xl gap-4 border-t border-neutral-200 pt-10 dark:border-neutral-800 sm:grid-cols-2"
+    >
+      <NuxtLink
+        v-if="adjacentPosts.previous"
+        :to="adjacentPosts.previous.path"
+        class="grid gap-3 rounded-3xl border border-neutral-200 p-5 transition hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-800 dark:hover:border-neutral-700 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950"
+      >
+        <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
+          上一篇
+        </span>
+        <h2 class="text-lg font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+          {{ adjacentPosts.previous.title }}
+        </h2>
+        <p class="text-sm leading-7 text-neutral-600 dark:text-neutral-300">
+          {{ adjacentPosts.previous.date }}
+        </p>
+      </NuxtLink>
+
+      <div
+        v-else
+        class="hidden sm:block"
+      />
+
+      <NuxtLink
+        v-if="adjacentPosts.next"
+        :to="adjacentPosts.next.path"
+        class="grid gap-3 rounded-3xl border border-neutral-200 p-5 text-left transition hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-800 dark:hover:border-neutral-700 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950 sm:text-right"
+      >
+        <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
+          下一篇
+        </span>
+        <h2 class="text-lg font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
+          {{ adjacentPosts.next.title }}
+        </h2>
+        <p class="text-sm leading-7 text-neutral-600 dark:text-neutral-300">
+          {{ adjacentPosts.next.date }}
+        </p>
+      </NuxtLink>
+    </section>
   </main>
 </template>
 
