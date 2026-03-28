@@ -7,17 +7,12 @@ const latestPosts = await queryCollection('posts')
 </script>
 
 <template>
-  <div class="min-h-screen bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-    <HomeHeader />
-
-    <main class="mx-auto flex max-w-6xl flex-col gap-20 px-6 pb-20">
-      <HomeHero />
-      <HomeAbout />
-      <HomeRecentPosts :posts="latestPosts" />
-      <HomeStack />
-      <HomeContact />
-    </main>
-
+  <main class="mx-auto flex max-w-6xl flex-col gap-20 px-6 pb-20">
+    <HomeHero />
+    <HomeAbout />
+    <HomeRecentPosts :posts="latestPosts" />
+    <HomeStack />
+    <HomeContact />
     <HomeFooter />
-  </div>
+  </main>
 </template>
