@@ -18,25 +18,11 @@ const posts = await usePublishedPosts()
     </section>
 
     <section class="grid gap-4">
-      <article
+      <PostCard
         v-for="post in posts"
         :key="post.path"
-        class="grid gap-3 rounded-3xl border border-neutral-200 p-6 dark:border-neutral-800"
-      >
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
-          <span>{{ post.date }}</span>
-          <span v-if="post.readingTime">{{ post.readingTime }}</span>
-          <span v-if="post.location">{{ post.location }}</span>
-        </div>
-        <div class="grid gap-2">
-          <h2 class="text-2xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
-            {{ post.title }}
-          </h2>
-          <p class="text-sm leading-7 text-neutral-600 dark:text-neutral-300 sm:text-base">
-            {{ post.description }}
-          </p>
-        </div>
-      </article>
+        :post="post"
+      />
     </section>
   </main>
 </template>
