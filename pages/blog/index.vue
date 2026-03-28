@@ -18,7 +18,7 @@ const posts = await usePublishedPosts()
     </section>
 
     <section class="grid gap-4">
-      <PostCard
+      <BlogPostCard
         v-for="post in posts"
         :key="post.path"
         :post="post"

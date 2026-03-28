@@ -10,6 +10,10 @@ export type BlogPostSummary = {
   location?: string
 }
 
+export type BlogPostDetail = BlogPostSummary & {
+  body: unknown
+}
+
 type RawPost = {
   path: string
   title: string
@@ -19,11 +23,12 @@ type RawPost = {
   draft?: boolean
   readingTime?: string
   location?: string
+  body?: unknown
 }
 
 const normalizePost = (post: RawPost): BlogPostSummary => ({
   path: post.path,
-  slug: post.path.replace(/^\/blog\//, ''),
+  slug: post.path.replace(/^\/posts\//, '').replace(/^\/blog\//, ''),
   title: post.title,
   description: post.description,
   date: post.date,
@@ -50,4 +55,22 @@ export const useLatestPosts = async (limit = 3): Promise<BlogPostSummary[]> => {
 export const usePostBySlug = async (slug: string): Promise<BlogPostSummary | null> => {
   const posts = await usePublishedPosts()
   return posts.find((post) => post.slug === slug) ?? null
+}
+
+export const usePostDetailBySlug = async (slug: string): Promise<BlogPostDetail | null> => {
+  const post = await queryCollection('posts')
+    .where('path', '=', `/posts/${slug}`)
+    .where('draft', '=', false)
+    .first()
+
+  if (!post) {
+    return null
+  }
+
+  const normalized = normalizePost(post as RawPost)
+
+  return {
+    ...normalized,
+    body: (post as RawPost).body
+  }
 }

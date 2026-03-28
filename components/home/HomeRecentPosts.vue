@@ -14,7 +14,7 @@ defineProps<{
     description="Only the latest posts appear here so the homepage stays personal first and content-aware second."
   >
     <div class="grid gap-4">
-      <PostCard
+      <BlogPostCard
         v-for="post in posts"
         :key="post.path"
         :post="post"
