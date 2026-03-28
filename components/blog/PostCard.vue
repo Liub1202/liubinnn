@@ -50,7 +50,7 @@ const getTagPath = (tag: string) => `/tags/${encodeURIComponent(tag)}`
         :to="props.post.path"
         class="text-sm font-medium text-neutral-500 transition hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:text-neutral-400 dark:hover:text-neutral-100 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950"
       >
-        Read article →
+        阅读全文 →
       </NuxtLink>
     </div>
   </article>

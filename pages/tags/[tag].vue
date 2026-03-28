@@ -9,7 +9,7 @@ const posts = await usePostsByTag(currentTag.value)
 if (!currentTag.value) {
   throw createError({
     statusCode: 404,
-    statusMessage: 'Tag not found'
+    statusMessage: '标签不存在'
   })
 }
 
@@ -18,7 +18,7 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: `Posts tagged with ${currentTag.value}.`
+      content: `按标签 ${currentTag.value} 聚合的文章列表。`
     }
   ]
 })
@@ -32,18 +32,18 @@ useHead({
         class="inline-flex items-center gap-2 text-sm text-neutral-500 transition hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
       >
         <span aria-hidden="true">←</span>
-        <span>Back to Blog</span>
+        <span>返回 Blog</span>
       </NuxtLink>
 
       <div class="grid gap-4">
         <p class="text-sm uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-          Tag
+          标签
         </p>
         <h1 class="text-4xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
           #{{ currentTag }}
         </h1>
         <p class="max-w-2xl text-base leading-8 text-neutral-600 dark:text-neutral-300">
-          {{ posts.length }} post<span v-if="posts.length !== 1">s</span> tagged with {{ currentTag }}.
+          共有 {{ posts.length }} 篇文章归档在标签「{{ currentTag }}」下。
         </p>
       </div>
     </section>
@@ -63,7 +63,7 @@ useHead({
       v-else
       class="rounded-3xl border border-neutral-200 px-6 py-8 text-neutral-600 dark:border-neutral-800 dark:text-neutral-300"
     >
-      No posts have been published with this tag yet.
+      这个标签下暂时还没有已发布的文章。
     </section>
   </main>
 </template>

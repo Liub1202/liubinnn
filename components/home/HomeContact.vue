@@ -6,13 +6,13 @@ const links = [
     href: 'https://github.com/Liub1202'
   },
   {
-    label: 'Email',
+    label: '邮箱',
     value: 'hello@liubinnn.dev',
     href: 'mailto:hello@liubinnn.dev'
   },
   {
     label: 'Blog',
-    value: 'Writing and notes',
+    value: '文章与笔记',
     href: '#recent-posts'
   }
 ]
@@ -21,9 +21,9 @@ const links = [
 <template>
   <HomeSection
     id="contact"
-    eyebrow="Contact"
-    title="Simple ways to reach out or keep reading."
-    description="The contact block stays lightweight and link-driven, matching the minimal direction of the site."
+    eyebrow="联系"
+    title="一些简单直接的联系与继续阅读方式。"
+    description="这个区块保持轻量、以链接为主，也延续整站克制简洁的方向。"
   >
     <div class="grid gap-4 md:grid-cols-3">
       <a

@@ -9,9 +9,9 @@ defineProps<{
 <template>
   <HomeSection
     id="recent-posts"
-    eyebrow="Recent Posts"
-    title="A small window into the latest writing."
-    description="Only the latest posts appear here so the homepage stays personal first and content-aware second."
+    eyebrow="最近文章"
+    title="最近写作的一小块切面。"
+    description="这里只展示最新的几篇内容，让首页保持“个人主页优先、内容入口其次”的节奏。"
   >
     <div class="grid gap-4">
       <BlogPostCard

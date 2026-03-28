@@ -6,13 +6,13 @@
           Liubinnn
         </NuxtLink>
         <p class="text-xs text-neutral-500 dark:text-neutral-400">
-          Personal Homepage + Blog
+          个人主页 + Blog
         </p>
       </div>
 
       <nav class="flex flex-wrap items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300 sm:justify-end">
         <NuxtLink to="/" class="transition hover:text-neutral-950 dark:hover:text-neutral-50">
-          Home
+          首页
         </NuxtLink>
         <NuxtLink to="/blog" class="transition hover:text-neutral-950 dark:hover:text-neutral-50">
           Blog

@@ -9,11 +9,11 @@ const posts = await usePublishedPosts()
         Blog
       </p>
       <h1 class="text-4xl font-semibold tracking-tight text-neutral-950 dark:text-neutral-50">
-        Writing, notes, and experiments.
+        写作、笔记与一些实验。
       </h1>
       <p class="max-w-2xl text-base leading-8 text-neutral-600 dark:text-neutral-300">
-        A simple list page for the content layer. It stays intentionally minimal and leaves room for tags,
-        post detail pages, and richer navigation in the next phase.
+        这是内容层的基础列表页。它保持克制简洁，同时为标签页、文章详情页，
+        以及下一阶段更完整的内容导航预留空间。
       </p>
     </section>
 

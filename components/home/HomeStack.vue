@@ -1,21 +1,21 @@
 <script setup lang="ts">
 const stackGroups = [
   {
-    title: 'Core Stack',
+    title: '核心技术栈',
     items: ['Nuxt', 'TypeScript', '@nuxt/content', 'Tailwind CSS']
   },
   {
-    title: 'Site Direction',
-    items: ['Personal Homepage', 'Blog', 'Readable UI', 'Content-first structure']
+    title: '站点方向',
+    items: ['个人主页', 'Blog', '高可读界面', '内容优先结构']
   }
 ]
 </script>
 
 <template>
   <HomeSection
-    eyebrow="Stack"
-    title="Tools and themes that define the site."
-    description="This section gives visitors a quick technical snapshot without turning the homepage into a long project document."
+    eyebrow="技术栈"
+    title="构成这个站点的工具与方向。"
+    description="这一部分提供一个快速的技术侧快照，但不会把首页变成长篇项目文档。"
   >
     <div class="grid gap-4 md:grid-cols-2">
       <section
