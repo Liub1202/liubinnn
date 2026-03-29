@@ -1,16 +1,27 @@
 <script setup lang="ts">
 import { createError, useHead, useRoute } from '#imports'
-import { ref } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import PostToc from '~/components/blog/PostToc.vue'
 import { getTagPath } from '~/composables/usePosts'
 
 const route = useRoute()
 const slug = route.params.slug as string
 const articleRef = ref<HTMLElement | null>(null)
+const articleLayoutRef = ref<HTMLElement | null>(null)
+const articleShellRef = ref<HTMLElement | null>(null)
+const tocColumnRef = ref<HTMLElement | null>(null)
+const tocCardRef = ref<InstanceType<typeof PostToc> | null>(null)
 
 const post = await usePostDetailBySlug(slug)
 const adjacentPosts = await useAdjacentPostsBySlug(slug)
 const { tocItems, activeId, hasToc, scrollToHeading } = usePostToc(articleRef)
+const { translateY, refreshTocPosition } = usePostTocPosition(
+  articleLayoutRef,
+  articleShellRef,
+  tocColumnRef,
+  computed(() => tocCardRef.value?.tocCardElement ?? null),
+  hasToc
+)
 
 if (!post) {
   throw createError({
@@ -28,6 +39,15 @@ useHead({
     }
   ]
 })
+
+watch(
+  () => [hasToc.value, tocItems.value.length],
+  async () => {
+    await nextTick()
+    refreshTocPosition()
+  },
+  { immediate: true }
+)
 </script>
 
 <template>
@@ -74,10 +94,11 @@ useHead({
     </section>
 
     <section
+      ref="articleLayoutRef"
       class="article-layout mx-auto w-full"
       :class="hasToc ? 'with-toc' : ''"
     >
-      <section class="article-shell w-full rounded-[2rem] border border-neutral-200/90 bg-white/90 px-6 py-8 dark:border-neutral-800 dark:bg-neutral-950/90 sm:px-10 sm:py-10">
+      <section ref="articleShellRef" class="article-shell w-full rounded-[2rem] border border-neutral-200/90 bg-white/90 px-6 py-8 dark:border-neutral-800 dark:bg-neutral-950/90 sm:px-10 sm:py-10">
         <article ref="articleRef" class="post-body mx-auto w-full max-w-[48rem]">
           <ContentRenderer :value="post" />
         </article>
@@ -85,11 +106,14 @@ useHead({
 
       <div
         v-if="hasToc"
+        ref="tocColumnRef"
         class="toc-column hidden lg:block"
       >
         <PostToc
+          ref="tocCardRef"
           :items="tocItems"
           :active-id="activeId"
+          :translate-y="translateY"
           @navigate="scrollToHeading"
         />
       </div>
@@ -385,7 +409,7 @@ useHead({
 
   .toc-column {
     position: sticky;
-    top: calc(50vh - 16rem);
+    top: 6.5rem;
   }
 }
 
