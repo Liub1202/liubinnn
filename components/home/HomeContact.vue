@@ -7,8 +7,8 @@ const links = [
   },
   {
     label: '邮箱',
-    value: 'hello@liubinnn.dev',
-    href: 'mailto:hello@liubinnn.dev'
+    value: '2115360251@qq.com',
+    href: 'mailto:2115360251@qq.com'
   },
   {
     label: '博客',

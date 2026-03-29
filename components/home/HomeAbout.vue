@@ -2,33 +2,33 @@
   <HomeSection
     id="about"
     eyebrow="关于"
-    title="先是个人主页，其次才是有结构的内容入口。"
-    description="这个落地页应该先让访客理解站点背后的人，再引导他们进入博客内容。"
+    title="这里更像一张持续更新的个人主页。"
+    description="它用来放我正在做的事、长期关注的方向，以及逐步累积下来的写作内容。"
   >
     <div class="grid gap-6 rounded-3xl border border-neutral-200 p-6 dark:border-neutral-800 sm:grid-cols-[1.4fr_0.8fr] sm:p-8">
       <div class="grid gap-4 text-sm leading-7 text-neutral-600 dark:text-neutral-300 sm:text-base">
         <p>
-          这个项目从一开始就被定义为个人站点，而不是内容平台。首页负责呈现身份、方向和关注点，
-          博客则作为清晰的内容入口存在，而不是反过来主导整个访问体验。
+          我希望这里先传达一个稳定而直接的印象: 我是谁，在做什么，最近又把注意力放在哪些问题上。
+          站点不追求复杂的包装，而是保留一种清晰、安静、方便长期维护的节奏。
         </p>
         <p>
-          最终它应该像一张安静的开发者名片：可读、克制、有留白，并且能够在不破坏第一版简洁性的前提下，
-          平滑扩展出更多模块。
+          博客部分则承担“继续往里走”的角色。它会记录开发过程、项目笔记、工具体验，
+          也会留下少量关于工作方式与个人观察的文字，让内容和个人主页自然连接起来。
         </p>
       </div>
 
       <div class="grid gap-4 rounded-2xl bg-neutral-50 p-5 text-sm text-neutral-600 dark:bg-neutral-900 dark:text-neutral-300">
         <div class="grid gap-1">
           <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-            重点
+            现在在做
           </p>
-          <p>个人表达、写作内容，以及清晰的博客入口。</p>
+          <p>前端开发、内容站点搭建，以及更稳定的个人表达方式。</p>
         </div>
         <div class="grid gap-1">
           <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-            原则
+            这里会写
           </p>
-          <p>先让首页保持简洁，再让内容把访问逐步加深。</p>
+          <p>文章、开发笔记、实验记录，还有一些不太喧闹的长期思考。</p>
         </div>
       </div>
     </div>
