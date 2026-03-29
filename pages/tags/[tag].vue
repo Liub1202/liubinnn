@@ -32,7 +32,7 @@ useHead({
         class="inline-flex items-center gap-2 text-sm text-neutral-500 transition hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-100"
       >
         <span aria-hidden="true">←</span>
-        <span>返回 Blog</span>
+        <span>返回博客列表</span>
       </NuxtLink>
 
       <div class="grid gap-4">

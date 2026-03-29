@@ -43,17 +43,21 @@ const comparePostByDateAsc = (left: BlogPostSummary, right: BlogPostSummary): nu
   return left.path.localeCompare(right.path)
 }
 
-const normalizePost = (post: RawPost): BlogPostSummary => ({
-  path: post.path,
-  slug: post.path.replace(/^\/posts\//, '').replace(/^\/blog\//, ''),
-  title: post.title,
-  description: post.description,
-  date: post.date,
-  tags: post.tags ?? [],
-  draft: post.draft ?? false,
-  readingTime: post.readingTime,
-  location: post.location
-})
+const normalizePost = (post: RawPost): BlogPostSummary => {
+  const slug = post.path.replace(/^\/posts\//, '').replace(/^\/blog\//, '')
+
+  return {
+    path: `/blog/${slug}`,
+    slug,
+    title: post.title,
+    description: post.description,
+    date: post.date,
+    tags: post.tags ?? [],
+    draft: post.draft ?? false,
+    readingTime: post.readingTime,
+    location: post.location
+  }
+}
 
 export const usePublishedPosts = async (): Promise<BlogPostSummary[]> => {
   const posts = await queryCollection('posts')

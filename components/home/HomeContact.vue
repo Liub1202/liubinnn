@@ -11,7 +11,7 @@ const links = [
     href: 'mailto:hello@liubinnn.dev'
   },
   {
-    label: 'Blog',
+    label: '博客',
     value: '文章与笔记',
     href: '#recent-posts'
   }

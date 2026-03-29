@@ -6,7 +6,7 @@
           Liubinnn
         </NuxtLink>
         <p class="text-xs text-neutral-500 dark:text-neutral-400">
-          个人主页 + Blog
+          个人主页 + 博客
         </p>
       </div>
 
@@ -15,7 +15,7 @@
           首页
         </NuxtLink>
         <NuxtLink to="/blog" class="transition hover:text-neutral-950 dark:hover:text-neutral-50">
-          Blog
+          博客
         </NuxtLink>
         <a
           href="https://github.com/Liub1202"

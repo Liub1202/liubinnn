@@ -6,7 +6,7 @@ const stackGroups = [
   },
   {
     title: '站点方向',
-    items: ['个人主页', 'Blog', '高可读界面', '内容优先结构']
+    items: ['个人主页', '博客', '高可读界面', '内容优先结构']
   }
 ]
 </script>
