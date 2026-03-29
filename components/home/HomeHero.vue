@@ -17,7 +17,7 @@
     </div>
 
     <div class="grid gap-4 sm:grid-cols-3">
-      <div class="rounded-3xl border border-neutral-200 p-5 dark:border-neutral-800">
+      <div class="rounded-3xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
         <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
           身份
         </p>
@@ -26,7 +26,7 @@
         </p>
       </div>
 
-      <div class="rounded-3xl border border-neutral-200 p-5 dark:border-neutral-800">
+      <div class="rounded-3xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
         <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
           方向
         </p>
@@ -35,7 +35,7 @@
         </p>
       </div>
 
-      <div class="rounded-3xl border border-neutral-200 p-5 dark:border-neutral-800">
+      <div class="rounded-3xl border border-neutral-200 bg-white p-5 dark:border-neutral-800 dark:bg-neutral-950">
         <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
           写作
         </p>

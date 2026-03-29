@@ -29,7 +29,7 @@ const links = [
         :href="link.href"
         :target="link.external ? '_blank' : undefined"
         :rel="link.external ? 'noreferrer' : undefined"
-        class="grid gap-2 rounded-3xl border border-neutral-200 p-6 transition hover:border-neutral-300 dark:border-neutral-800 dark:hover:border-neutral-700"
+        class="grid gap-2 rounded-3xl border border-neutral-200 bg-white p-6 transition hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-700"
       >
         <span class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
           {{ link.label }}

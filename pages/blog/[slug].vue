@@ -58,7 +58,7 @@ useHead({
             v-for="tag in post.tags"
             :key="tag"
             :to="getTagPath(tag)"
-            class="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600 transition hover:border-neutral-400 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950"
+            class="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-600 transition hover:border-neutral-400 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:bg-neutral-800 dark:hover:text-neutral-100 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950"
           >
             {{ tag }}
           </NuxtLink>
@@ -76,7 +76,7 @@ useHead({
       <NuxtLink
         v-if="adjacentPosts.previous"
         :to="adjacentPosts.previous.path"
-        class="grid gap-3 rounded-3xl border border-neutral-200 p-5 transition hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-800 dark:hover:border-neutral-700 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950"
+        class="grid gap-3 rounded-3xl border border-neutral-200 bg-white p-5 transition hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-700 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950"
       >
         <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
           上一篇
@@ -91,7 +91,7 @@ useHead({
 
       <section
         v-else
-        class="grid gap-3 rounded-3xl border border-dashed border-neutral-200 p-5 text-left dark:border-neutral-800"
+        class="grid gap-3 rounded-3xl border border-dashed border-neutral-200 bg-neutral-50/70 p-5 text-left dark:border-neutral-800 dark:bg-neutral-950/60"
       >
         <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
           上一篇
@@ -107,7 +107,7 @@ useHead({
       <NuxtLink
         v-if="adjacentPosts.next"
         :to="adjacentPosts.next.path"
-        class="grid gap-3 rounded-3xl border border-neutral-200 p-5 text-left transition hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-800 dark:hover:border-neutral-700 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950 sm:text-right"
+        class="grid gap-3 rounded-3xl border border-neutral-200 bg-white p-5 text-left transition hover:border-neutral-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-700 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950 sm:text-right"
       >
         <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
           下一篇
@@ -122,7 +122,7 @@ useHead({
 
       <section
         v-else
-        class="grid gap-3 rounded-3xl border border-dashed border-neutral-200 p-5 text-left dark:border-neutral-800 sm:text-right"
+        class="grid gap-3 rounded-3xl border border-dashed border-neutral-200 bg-neutral-50/70 p-5 text-left dark:border-neutral-800 dark:bg-neutral-950/60 sm:text-right"
       >
         <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
           下一篇

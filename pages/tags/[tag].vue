@@ -49,7 +49,7 @@ useHead({
         <div class="flex flex-wrap gap-2">
           <NuxtLink
             :to="getTagPath(currentTag)"
-            class="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-700 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
+            class="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
           >
             当前标签 · #{{ currentTag }}
           </NuxtLink>
@@ -70,7 +70,7 @@ useHead({
 
     <section
       v-else
-      class="rounded-3xl border border-neutral-200 px-6 py-8 text-neutral-600 dark:border-neutral-800 dark:text-neutral-300"
+      class="rounded-3xl border border-dashed border-neutral-200 bg-neutral-50/70 px-6 py-8 text-neutral-600 dark:border-neutral-800 dark:bg-neutral-950/60 dark:text-neutral-300"
     >
       这个标签下暂时还没有已发布的文章。
     </section>

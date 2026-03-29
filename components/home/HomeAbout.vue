@@ -5,7 +5,7 @@
     title="这里更像一张持续更新的个人主页。"
     description="它用来放我正在做的事、长期关注的方向，以及逐步累积下来的写作内容。"
   >
-    <div class="grid gap-6 rounded-3xl border border-neutral-200 p-6 dark:border-neutral-800 sm:grid-cols-[1.4fr_0.8fr] sm:p-8">
+    <div class="grid gap-6 rounded-3xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950 sm:grid-cols-[1.4fr_0.8fr] sm:p-8">
       <div class="grid gap-4 text-sm leading-7 text-neutral-600 dark:text-neutral-300 sm:text-base">
         <p>
           我希望这里先传达一个稳定而直接的印象: 我是谁，在做什么，最近又把注意力放在哪些问题上。

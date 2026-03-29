@@ -36,7 +36,7 @@ const stackGroups = [
           <span
             v-for="item in group.items"
             :key="item"
-            class="inline-flex min-h-[2.5rem] items-center rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-sm font-medium leading-6 text-neutral-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:shadow-none"
+            class="inline-flex min-h-[2.5rem] items-center rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-sm font-medium leading-6 text-neutral-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.55)] transition hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:shadow-none dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
           >
             {{ item }}
           </span>
