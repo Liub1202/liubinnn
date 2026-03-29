@@ -15,7 +15,7 @@ if (!currentTag.value) {
 }
 
 useHead({
-  title: `#${currentTag.value} - Blog - Liubinnn`,
+  title: `#${currentTag.value}`,
   meta: [
     {
       name: 'description',

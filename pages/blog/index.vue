@@ -4,11 +4,11 @@ import { useHead } from '#imports'
 const posts = await usePublishedPosts()
 
 useHead({
-  title: 'Blog - Liubinnn',
+  title: 'My Blog',
   meta: [
     {
       name: 'description',
-      content: 'Liubinnn 的文章、笔记与实验列表。'
+        content: 'Liubinnn 的文章、笔记与实验列表。'
     }
   ]
 })

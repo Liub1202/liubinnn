@@ -11,7 +11,19 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: 'Liubinnn',
+      title: 'My Blog',
+      titleTemplate: '%s ｜ LiuBinnn',
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          href: '/favicon.svg'
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/avatar.jpg'
+        }
+      ],
       meta: [
         {
           name: 'description',

@@ -16,7 +16,7 @@ if (!post) {
 }
 
 useHead({
-  title: `${post.title} - Blog - Liubinnn`,
+  title: post.title,
   meta: [
     {
       name: 'description',
