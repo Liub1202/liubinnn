@@ -71,7 +71,6 @@ useHead({
     </article>
 
     <section
-      v-if="adjacentPosts.previous || adjacentPosts.next"
       class="mx-auto grid w-full max-w-3xl gap-4 border-t border-neutral-200 pt-10 dark:border-neutral-800 sm:grid-cols-2"
     >
       <NuxtLink
@@ -90,10 +89,20 @@ useHead({
         </p>
       </NuxtLink>
 
-      <div
+      <section
         v-else
-        class="hidden sm:block"
-      />
+        class="grid gap-3 rounded-3xl border border-dashed border-neutral-200 p-5 text-left dark:border-neutral-800"
+      >
+        <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
+          上一篇
+        </span>
+        <h2 class="text-lg font-semibold tracking-tight text-neutral-700 dark:text-neutral-200">
+          已经到最早的一篇了
+        </h2>
+        <p class="text-sm leading-7 text-neutral-500 dark:text-neutral-400">
+          可以回到博客列表，继续浏览其他内容。
+        </p>
+      </section>
 
       <NuxtLink
         v-if="adjacentPosts.next"
@@ -110,6 +119,21 @@ useHead({
           {{ adjacentPosts.next.date }}
         </p>
       </NuxtLink>
+
+      <section
+        v-else
+        class="grid gap-3 rounded-3xl border border-dashed border-neutral-200 p-5 text-left dark:border-neutral-800 sm:text-right"
+      >
+        <span class="text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
+          下一篇
+        </span>
+        <h2 class="text-lg font-semibold tracking-tight text-neutral-700 dark:text-neutral-200">
+          这已经是最新的一篇
+        </h2>
+        <p class="text-sm leading-7 text-neutral-500 dark:text-neutral-400">
+          后续更新会继续接在这里。
+        </p>
+      </section>
     </section>
   </main>
 </template>
