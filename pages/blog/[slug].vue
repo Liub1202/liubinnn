@@ -27,7 +27,7 @@ useHead({
 </script>
 
 <template>
-  <main class="mx-auto flex min-h-screen max-w-4xl flex-col gap-10 px-6 py-16">
+  <main class="mx-auto flex min-h-screen max-w-5xl flex-col gap-12 px-6 py-16 sm:gap-14">
     <section class="grid gap-6 border-b border-neutral-200 pb-10 dark:border-neutral-800">
       <NuxtLink
         to="/blog"
@@ -37,7 +37,7 @@ useHead({
         <span>返回博客列表</span>
       </NuxtLink>
 
-      <div class="grid gap-4">
+      <div class="mx-auto grid w-full max-w-[50rem] gap-5">
         <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs uppercase tracking-[0.18em] text-neutral-400 dark:text-neutral-500">
           <span>{{ post.date }}</span>
           <span v-if="post.readingTime">{{ post.readingTime }}</span>
@@ -66,12 +66,14 @@ useHead({
       </div>
     </section>
 
-    <article class="post-body mx-auto w-full max-w-[44rem]">
-      <ContentRenderer :value="post" />
-    </article>
+    <section class="article-shell mx-auto w-full max-w-[56rem] rounded-[2rem] border border-neutral-200/90 bg-white/90 px-6 py-8 dark:border-neutral-800 dark:bg-neutral-950/90 sm:px-10 sm:py-10">
+      <article class="post-body mx-auto w-full max-w-[48rem]">
+        <ContentRenderer :value="post" />
+      </article>
+    </section>
 
     <section
-      class="mx-auto grid w-full max-w-3xl gap-4 border-t border-neutral-200 pt-10 dark:border-neutral-800 sm:grid-cols-2"
+      class="mx-auto grid w-full max-w-[56rem] gap-4 border-t border-neutral-200 pt-10 dark:border-neutral-800 sm:grid-cols-2"
     >
       <NuxtLink
         v-if="adjacentPosts.previous"
@@ -145,8 +147,16 @@ useHead({
   line-height: 1.92;
 }
 
+.article-shell {
+  box-shadow: 0 1px 0 rgba(10, 10, 10, 0.03);
+}
+
 .dark .post-body {
   color: rgb(214 214 214);
+}
+
+.dark .article-shell {
+  box-shadow: none;
 }
 
 .post-body :deep(h1),
@@ -176,6 +186,7 @@ useHead({
   font-size: 1.65rem;
   margin-top: 4rem;
   margin-bottom: 1.35rem;
+  padding-top: 0.35rem;
 }
 
 .post-body :deep(h3) {
@@ -200,6 +211,15 @@ useHead({
 
 .post-body :deep(p + p) {
   margin-top: 1.35rem;
+}
+
+.post-body :deep(strong) {
+  color: rgb(23 23 23);
+  font-weight: 600;
+}
+
+.dark .post-body :deep(strong) {
+  color: rgb(245 245 245);
 }
 
 .post-body :deep(ul),
@@ -282,11 +302,36 @@ useHead({
   padding-left: 1.1rem;
   color: rgb(115 115 115);
   font-size: 1rem;
+  margin-left: 0;
 }
 
 .dark .post-body :deep(blockquote) {
   border-left-color: rgb(82 82 82);
   color: rgb(163 163 163);
+}
+
+.post-body :deep(hr) {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  border: 0;
+  border-top: 1px solid rgb(229 229 229);
+}
+
+.dark .post-body :deep(hr) {
+  border-top-color: rgb(38 38 38);
+}
+
+.post-body :deep(img) {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.8rem auto;
+  border: 1px solid rgb(229 229 229);
+  border-radius: 1.25rem;
+}
+
+.dark .post-body :deep(img) {
+  border-color: rgb(52 52 52);
 }
 
 @media (max-width: 640px) {
