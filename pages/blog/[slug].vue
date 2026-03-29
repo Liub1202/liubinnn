@@ -66,7 +66,7 @@ useHead({
       </div>
     </section>
 
-    <article class="post-body mx-auto w-full max-w-3xl">
+    <article class="post-body mx-auto w-full max-w-[44rem]">
       <ContentRenderer :value="post" />
     </article>
 
@@ -140,13 +140,13 @@ useHead({
 
 <style scoped>
 .post-body {
-  color: rgb(82 82 82);
-  line-height: 1.9;
-  font-size: 1rem;
+  color: rgb(64 64 64);
+  font-size: 1.0625rem;
+  line-height: 1.92;
 }
 
 .dark .post-body {
-  color: rgb(212 212 212);
+  color: rgb(214 214 214);
 }
 
 .post-body :deep(h1),
@@ -156,7 +156,7 @@ useHead({
   color: rgb(10 10 10);
   font-weight: 600;
   letter-spacing: -0.02em;
-  line-height: 1.2;
+  line-height: 1.22;
 }
 
 .dark .post-body :deep(h1),
@@ -167,80 +167,145 @@ useHead({
 }
 
 .post-body :deep(h1) {
-  font-size: 2rem;
+  font-size: 2.15rem;
   margin-top: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .post-body :deep(h2) {
-  font-size: 1.55rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  font-size: 1.65rem;
+  margin-top: 4rem;
+  margin-bottom: 1.35rem;
 }
 
 .post-body :deep(h3) {
-  font-size: 1.25rem;
-  margin-top: 2.25rem;
-  margin-bottom: 0.85rem;
+  font-size: 1.3rem;
+  margin-top: 2.75rem;
+  margin-bottom: 0.95rem;
+}
+
+.post-body :deep(h4) {
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
 }
 
 .post-body :deep(p),
 .post-body :deep(ul),
 .post-body :deep(ol),
 .post-body :deep(blockquote) {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 1.15rem;
+  margin-bottom: 1.15rem;
+}
+
+.post-body :deep(p + p) {
+  margin-top: 1.35rem;
 }
 
 .post-body :deep(ul),
 .post-body :deep(ol) {
-  padding-left: 1.35rem;
+  padding-left: 1.5rem;
 }
 
 .post-body :deep(li) {
-  margin-top: 0.45rem;
+  margin-top: 0.6rem;
+  padding-left: 0.2rem;
+}
+
+.post-body :deep(li > ul),
+.post-body :deep(li > ol) {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-body :deep(ul li::marker),
+.post-body :deep(ol li::marker) {
+  color: rgb(163 163 163);
 }
 
 .post-body :deep(a) {
   text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-decoration-color: rgb(212 212 212);
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 0.08em;
+}
+
+.dark .post-body :deep(a) {
+  text-decoration-color: rgb(82 82 82);
 }
 
 .post-body :deep(code) {
-  border-radius: 0.45rem;
-  background: rgb(245 245 245);
-  padding: 0.15rem 0.4rem;
-  font-size: 0.92em;
+  border: 1px solid rgb(229 229 229);
+  border-radius: 0.5rem;
+  background: rgb(250 250 250);
+  padding: 0.16rem 0.42rem;
+  font-size: 0.9em;
+  color: rgb(38 38 38);
 }
 
 .dark .post-body :deep(code) {
-  background: rgb(38 38 38);
+  border-color: rgb(64 64 64);
+  background: rgb(32 32 32);
+  color: rgb(240 240 240);
 }
 
 .post-body :deep(pre) {
   overflow-x: auto;
-  border-radius: 1rem;
-  background: rgb(10 10 10);
+  border: 1px solid rgb(229 229 229);
+  border-radius: 1.1rem;
+  background: rgb(250 250 250);
+  color: rgb(23 23 23);
+  padding: 1.15rem 1.2rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.75;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.dark .post-body :deep(pre) {
+  border-color: rgb(52 52 52);
+  background: rgb(15 15 15);
   color: rgb(245 245 245);
-  padding: 1rem 1.1rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  box-shadow: none;
 }
 
 .post-body :deep(pre code) {
   background: transparent;
+  border: none;
   padding: 0;
   color: inherit;
+  font-size: 0.92em;
 }
 
 .post-body :deep(blockquote) {
   border-left: 3px solid rgb(212 212 212);
-  padding-left: 1rem;
+  padding-left: 1.1rem;
   color: rgb(115 115 115);
+  font-size: 1rem;
 }
 
 .dark .post-body :deep(blockquote) {
   border-left-color: rgb(82 82 82);
   color: rgb(163 163 163);
+}
+
+@media (max-width: 640px) {
+  .post-body {
+    font-size: 1rem;
+    line-height: 1.88;
+  }
+
+  .post-body :deep(h1) {
+    font-size: 1.9rem;
+  }
+
+  .post-body :deep(h2) {
+    font-size: 1.5rem;
+    margin-top: 3.25rem;
+  }
+
+  .post-body :deep(pre) {
+    padding: 1rem;
+  }
 }
 </style>
