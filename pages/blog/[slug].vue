@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { createError, useHead, useRoute } from '#imports'
+import { getTagPath } from '~/composables/usePosts'
 
 const route = useRoute()
 const slug = route.params.slug as string
@@ -53,13 +54,14 @@ useHead({
         </div>
 
         <div class="flex flex-wrap gap-2">
-          <span
+          <NuxtLink
             v-for="tag in post.tags"
             :key="tag"
-            class="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600 dark:border-neutral-700 dark:text-neutral-300"
+            :to="getTagPath(tag)"
+            class="rounded-full border border-neutral-200 px-3 py-1 text-xs text-neutral-600 transition hover:border-neutral-400 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-4 dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-neutral-500 dark:hover:text-neutral-100 dark:focus-visible:ring-neutral-500 dark:focus-visible:ring-offset-neutral-950"
           >
             {{ tag }}
-          </span>
+          </NuxtLink>
         </div>
       </div>
     </section>

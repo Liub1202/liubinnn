@@ -33,6 +33,8 @@ type RawPost = {
 
 const normalizeTag = (tag: string): string => tag.trim().toLowerCase()
 
+export const getTagPath = (tag: string): string => `/tags/${encodeURIComponent(tag)}`
+
 const comparePostByDateAsc = (left: BlogPostSummary, right: BlogPostSummary): number => {
   const dateDiff = new Date(left.date).getTime() - new Date(right.date).getTime()
 

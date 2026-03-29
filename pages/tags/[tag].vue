@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { createError, useHead, useRoute } from '#imports'
+import { getTagPath } from '~/composables/usePosts'
 
 const route = useRoute()
 const currentTag = computed(() => decodeURIComponent(route.params.tag as string))
@@ -43,8 +44,16 @@ useHead({
           #{{ currentTag }}
         </h1>
         <p class="max-w-2xl text-base leading-8 text-neutral-600 dark:text-neutral-300">
-          共有 {{ posts.length }} 篇文章归档在标签「{{ currentTag }}」下。
+          浏览所有带有「{{ currentTag }}」标签的文章。当前共收录 {{ posts.length }} 篇内容。
         </p>
+        <div class="flex flex-wrap gap-2">
+          <NuxtLink
+            :to="getTagPath(currentTag)"
+            class="rounded-full border border-neutral-200 bg-neutral-50 px-3 py-1 text-xs text-neutral-700 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200"
+          >
+            当前标签 · #{{ currentTag }}
+          </NuxtLink>
+        </div>
       </div>
     </section>
 

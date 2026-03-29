@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { getTagPath } from '~/composables/usePosts'
 import type { BlogPostSummary } from '~/composables/usePosts'
 
 const props = withDefaults(defineProps<{
@@ -8,7 +9,6 @@ const props = withDefaults(defineProps<{
   titleTag: 'h2'
 })
 
-const getTagPath = (tag: string) => `/tags/${encodeURIComponent(tag)}`
 </script>
 
 <template>
