@@ -1,6 +1,7 @@
 <template>
   <section class="hero-shell relative isolate overflow-hidden border-b border-neutral-200 pb-16 pt-12 dark:border-neutral-800 sm:pb-20 sm:pt-16">
-    <div class="hero-glow pointer-events-none absolute inset-x-0 top-0 h-56" />
+    <div class="hero-glow hero-glow-warm pointer-events-none absolute left-[-6%] top-8 h-44 w-44 rounded-full" />
+    <div class="hero-glow hero-glow-cool pointer-events-none absolute right-[14%] top-14 h-52 w-52 rounded-full" />
 
     <div class="relative grid gap-8 sm:gap-10">
       <div class="grid gap-6">
@@ -79,15 +80,28 @@
 }
 
 .hero-glow {
-  background:
-    radial-gradient(circle at top left, rgb(217 119 6 / 0.14), transparent 42%),
-    radial-gradient(circle at 72% 18%, rgb(14 116 144 / 0.12), transparent 36%);
+  filter: blur(54px);
+  opacity: 0.6;
+}
+
+.hero-glow-warm {
+  background: radial-gradient(circle, rgb(217 119 6 / 0.16), transparent 68%);
+}
+
+.hero-glow-cool {
+  background: radial-gradient(circle, rgb(8 145 178 / 0.14), transparent 70%);
 }
 
 .dark .hero-glow {
-  background:
-    radial-gradient(circle at top left, rgb(245 158 11 / 0.12), transparent 42%),
-    radial-gradient(circle at 72% 18%, rgb(34 211 238 / 0.12), transparent 36%);
+  opacity: 0.45;
+}
+
+.dark .hero-glow-warm {
+  background: radial-gradient(circle, rgb(245 158 11 / 0.14), transparent 68%);
+}
+
+.dark .hero-glow-cool {
+  background: radial-gradient(circle, rgb(34 211 238 / 0.12), transparent 70%);
 }
 
 .hero-title {
@@ -107,14 +121,14 @@
 
 .hero-title-accent {
   margin-left: 0.18em;
-  background-image: linear-gradient(135deg, rgb(120 53 15), rgb(8 145 178));
+  background-image: linear-gradient(135deg, rgb(180 83 9), rgb(13 148 136));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .dark .hero-title-accent {
-  background-image: linear-gradient(135deg, rgb(253 186 116), rgb(103 232 249));
+  background-image: linear-gradient(135deg, rgb(251 191 36), rgb(153 246 228));
 }
 
 .hero-title:hover .hero-title-main {
