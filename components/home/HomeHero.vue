@@ -32,7 +32,7 @@
             落笔
           </p>
           <p class="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
-            不太想把博客写成履历表，更愿意把它当作一张长期更新的思考底稿。
+            不想把博客写成一份履历，更愿把它当作一张持续更新的思考底稿。
           </p>
         </div>
 
@@ -41,7 +41,7 @@
             所思
           </p>
           <p class="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
-            关心前端体验、JavaScript 与 TypeScript 的边界，也持续观察 AI 如何改变日常创作与开发。
+            关注前端体验，也持续观察 AI 如何重塑行业与生产方式。
           </p>
         </div>
 
@@ -50,7 +50,7 @@
             所见
           </p>
           <p class="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
-            新工具、新表达、新问题，都值得靠近一点看，再挑几件真正重要的事情写下来。
+            新工具、新表达、新问题，都值得凑近细看，再拣选几件真正重要的事，认真写下。
           </p>
         </div>
       </div>
