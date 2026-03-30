@@ -16,13 +16,12 @@
 
         <div class="grid gap-5">
           <h1 class="hero-title max-w-5xl text-4xl tracking-tight text-neutral-950 dark:text-neutral-50 sm:text-5xl lg:text-6xl">
-            <span class="hero-title-main">代码裁云作纸，</span>
+            <span class="hero-title-main">半卷闲书观世界，</span>
             <span class="hero-title-accent">且借新知写春秋。</span>
           </h1>
 
           <p class="max-w-3xl text-base leading-8 text-neutral-600 dark:text-neutral-300 sm:text-lg">
-            这里记录我对 Web、JavaScript、TypeScript 与 AI 的学习、实践与思考。平时喜欢阅读、
-            接触新事物，也喜欢把一闪而过的念头，慢慢想成一篇文章。
+            且视天地为宽，接纳所有来日方长。拥抱时代、拥抱改变。
           </p>
         </div>
       </div>

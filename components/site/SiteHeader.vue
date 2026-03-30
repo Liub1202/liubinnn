@@ -1,12 +1,12 @@
 <template>
   <header class="border-b border-neutral-200/80 bg-white/88 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/88">
-    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3.5 px-6 py-[1.125rem] sm:flex-row sm:items-center sm:justify-between">
       <div>
-        <NuxtLink to="/" class="inline-flex items-center gap-3 transition hover:opacity-90">
+        <NuxtLink to="/" class="inline-flex items-center gap-2.5 transition hover:opacity-90">
           <img
             src="/avatar.jpg"
             alt="LiuBinnn avatar"
-            class="h-11 w-11 rounded-full border border-neutral-200 object-cover dark:border-neutral-800"
+            class="h-10 w-10 rounded-full border border-neutral-200 object-cover dark:border-neutral-800"
           >
           <div class="grid gap-0.5">
             <span class="text-xs uppercase tracking-[0.24em] text-neutral-500 dark:text-neutral-400">
@@ -19,7 +19,7 @@
         </NuxtLink>
       </div>
 
-      <nav class="flex flex-wrap items-center gap-3 text-sm text-neutral-600 dark:text-neutral-300 sm:justify-end">
+      <nav class="flex flex-wrap items-center gap-2.5 text-sm text-neutral-600 dark:text-neutral-300 sm:justify-end">
         <NuxtLink to="/" class="transition hover:text-neutral-950 dark:hover:text-neutral-50">
           首页
         </NuxtLink>
