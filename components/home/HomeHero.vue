@@ -10,7 +10,7 @@
             LIUBINNN / PERSONAL LOG
           </p>
           <p class="max-w-2xl text-sm leading-7 text-neutral-500 dark:text-neutral-400">
-            记录前端开发、AI 使用、产品观察，也写那些一时说不清、却值得慢慢想的东西。
+            写代码，也读些闲书；记技术，也记那些暂时说不清、却值得想一想的念头。
           </p>
         </div>
 
@@ -21,7 +21,7 @@
           </h1>
 
           <p class="max-w-3xl text-base leading-8 text-neutral-600 dark:text-neutral-300 sm:text-lg">
-            这里更像一册缓慢更新的个人笔记。封面不必太热闹，重要的是读下去时，能遇见一些认真写下的东西。
+            且视天地为宽，接纳所有来日方长。拥抱时代、拥抱改变。
           </p>
         </div>
       </div>
