@@ -1,5 +1,5 @@
 <template>
-  <section class="hero-shell relative isolate overflow-hidden border-b border-neutral-200 pb-16 pt-12 dark:border-neutral-800 sm:pb-20 sm:pt-16">
+  <section class="hero-shell relative isolate overflow-hidden border-b border-neutral-200 pb-12 pt-12 dark:border-neutral-800 sm:pb-16 sm:pt-16">
     <div class="hero-glow hero-glow-warm pointer-events-none absolute left-[-6%] top-8 h-44 w-44 rounded-full" />
     <div class="hero-glow hero-glow-cool pointer-events-none absolute right-[14%] top-14 h-52 w-52 rounded-full" />
 
@@ -10,7 +10,7 @@
             LIUBINNN / PERSONAL LOG
           </p>
           <p class="max-w-2xl text-sm leading-7 text-neutral-500 dark:text-neutral-400">
-            写代码，也读些闲书；记技术，也记那些暂时说不清、却值得想一想的念头。
+            记录前端开发、AI 使用、产品观察，也写那些一时说不清、却值得慢慢想的东西。
           </p>
         </div>
 
@@ -21,36 +21,7 @@
           </h1>
 
           <p class="max-w-3xl text-base leading-8 text-neutral-600 dark:text-neutral-300 sm:text-lg">
-            且视天地为宽，接纳所有来日方长。拥抱时代、拥抱改变。
-          </p>
-        </div>
-      </div>
-
-      <div class="grid gap-4 sm:grid-cols-3">
-        <div class="hero-card rounded-3xl border border-neutral-200/80 bg-white/80 p-5 backdrop-blur-sm dark:border-neutral-800/80 dark:bg-neutral-950/70">
-          <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-            落笔
-          </p>
-          <p class="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
-            不想把博客写成一份履历，更愿把它当作一张持续更新的思考底稿。
-          </p>
-        </div>
-
-        <div class="hero-card rounded-3xl border border-neutral-200/80 bg-white/80 p-5 backdrop-blur-sm dark:border-neutral-800/80 dark:bg-neutral-950/70">
-          <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-            所思
-          </p>
-          <p class="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
-            关注前端体验，也持续观察 AI 如何重塑行业与生产方式。
-          </p>
-        </div>
-
-        <div class="hero-card rounded-3xl border border-neutral-200/80 bg-white/80 p-5 backdrop-blur-sm dark:border-neutral-800/80 dark:bg-neutral-950/70">
-          <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-            所见
-          </p>
-          <p class="mt-3 text-sm leading-7 text-neutral-700 dark:text-neutral-300">
-            新工具、新表达、新问题，都值得凑近细看，再拣选几件真正重要的事，认真写下。
+            这里更像一册缓慢更新的个人笔记。封面不必太热闹，重要的是读下去时，能遇见一些认真写下的东西。
           </p>
         </div>
       </div>
@@ -60,13 +31,13 @@
           href="#recent-posts"
           class="inline-flex items-center justify-center rounded-full bg-neutral-950 px-5 py-3 text-sm font-medium text-white transition duration-300 hover:-translate-y-0.5 hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-950 dark:hover:bg-neutral-200"
         >
-          先读几篇近作
+          开始阅读
         </a>
         <a
-          href="#about"
+          href="/blog"
           class="inline-flex items-center justify-center rounded-full border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-700 transition duration-300 hover:-translate-y-0.5 hover:border-neutral-950 hover:text-neutral-950 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-100 dark:hover:text-neutral-50"
         >
-          看看我近来在想什么
+          查看全部文章
         </a>
       </div>
     </div>
@@ -139,25 +110,6 @@
   filter: brightness(1.06);
 }
 
-.hero-card {
-  transition:
-    transform 220ms ease,
-    border-color 220ms ease,
-    background-color 220ms ease,
-    box-shadow 220ms ease;
-}
-
-.hero-card:hover {
-  transform: translateY(-3px);
-  border-color: rgb(163 163 163 / 0.9);
-  box-shadow: 0 14px 32px rgb(23 23 23 / 0.06);
-}
-
-.dark .hero-card:hover {
-  border-color: rgb(82 82 82 / 0.95);
-  box-shadow: 0 14px 32px rgb(0 0 0 / 0.22);
-}
-
 @keyframes hero-fade-up {
   from {
     opacity: 0;
@@ -173,8 +125,7 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-shell,
   .hero-title-main,
-  .hero-title-accent,
-  .hero-card {
+  .hero-title-accent {
     animation: none;
     transition: none;
   }

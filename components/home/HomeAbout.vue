@@ -1,36 +1,82 @@
+<script setup lang="ts">
+defineProps<{
+  featuredTags: Array<{
+    name: string
+    count: number
+    path: string
+  }>
+}>()
+
+const thoughtEntries = [
+  {
+    title: '前端体验里那些不显眼但很关键的细节',
+    description: '更在意页面如何被真正地浏览、理解和使用，而不是只停留在“做出来了”。'
+  },
+  {
+    title: 'AI 工具进入日常工作流之后，哪些地方真的变快了',
+    description: '对新工具保持兴趣，但会更慢一点地判断它们究竟改变了什么。'
+  },
+  {
+    title: '怎么让写作成为一种可持续维护的整理方式',
+    description: '比起一口气写很多，更想把这里做成一个能长期回头补充和修订的地方。'
+  }
+]
+</script>
+
 <template>
   <HomeSection
     id="about"
-    eyebrow="关于"
-    title="这里更像一张持续更新的个人主页。"
-    description="它用来放我正在做的事、长期关注的方向，以及逐步累积下来的写作内容。"
+    eyebrow="正在思考"
+    title="写作之外，也顺手把一些关注的问题收拢起来。"
+    description="它们未必都已经写成文章，但会先以提纲、片段或主题的方式留在这里，慢慢长成更完整的内容。"
   >
-    <div class="grid gap-6 rounded-3xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950 sm:grid-cols-[1.4fr_0.8fr] sm:p-8">
-      <div class="grid gap-4 text-sm leading-7 text-neutral-600 dark:text-neutral-300 sm:text-base">
-        <p>
-          我希望这里先传达一个稳定而直接的印象: 我是谁，在做什么，最近又把注意力放在哪些问题上。
-          站点不追求复杂的包装，而是保留一种清晰、安静、方便长期维护的节奏。
-        </p>
-        <p>
-          博客部分则承担“继续往里走”的角色。它会记录开发过程、项目笔记、工具体验，
-          也会留下少量关于工作方式与个人观察的文字，让内容和个人主页自然连接起来。
-        </p>
+    <div class="grid gap-6 lg:grid-cols-[1.35fr_0.85fr]">
+      <div class="grid gap-4">
+        <article
+          v-for="entry in thoughtEntries"
+          :key="entry.title"
+          class="rounded-3xl border border-neutral-200 bg-white p-6 transition hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:border-neutral-700"
+        >
+          <h3 class="text-lg font-semibold tracking-tight text-neutral-900 dark:text-neutral-50">
+            {{ entry.title }}
+          </h3>
+          <p class="mt-3 text-sm leading-7 text-neutral-600 dark:text-neutral-300 sm:text-base">
+            {{ entry.description }}
+          </p>
+        </article>
       </div>
 
-      <div class="grid gap-4 rounded-2xl bg-neutral-50 p-5 text-sm text-neutral-600 dark:bg-neutral-900 dark:text-neutral-300">
-        <div class="grid gap-1">
+      <aside class="grid gap-5 rounded-3xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-950">
+        <div class="grid gap-2">
           <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-            现在在做
+            归档主题
           </p>
-          <p>前端开发、内容站点搭建，以及更稳定的个人表达方式。</p>
+          <p class="text-sm leading-7 text-neutral-600 dark:text-neutral-300 sm:text-base">
+            先按主题往里走，比先认识我更重要。
+          </p>
         </div>
-        <div class="grid gap-1">
+
+        <div class="flex flex-wrap gap-3">
+          <NuxtLink
+            v-for="tag in featuredTags"
+            :key="tag.name"
+            :to="tag.path"
+            class="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50 px-4 py-2 text-sm text-neutral-700 transition hover:border-neutral-300 hover:bg-neutral-100 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200 dark:hover:border-neutral-600 dark:hover:bg-neutral-800"
+          >
+            <span>{{ tag.name }}</span>
+            <span class="text-xs text-neutral-400 dark:text-neutral-500">{{ tag.count }}</span>
+          </NuxtLink>
+        </div>
+
+        <div class="grid gap-2 rounded-2xl bg-neutral-50 p-5 dark:bg-neutral-900">
           <p class="text-xs uppercase tracking-[0.24em] text-neutral-400 dark:text-neutral-500">
-            这里会写
+            关于这个 blog
           </p>
-          <p>文章、开发笔记、实验记录，还有一些不太喧闹的长期思考。</p>
+          <p class="text-sm leading-7 text-neutral-600 dark:text-neutral-300">
+            它更像一份长期维护的个人笔记，而不是一张需要时刻更新的主页。能不断写下去，比显得完整更重要。
+          </p>
         </div>
-      </div>
+      </aside>
     </div>
   </HomeSection>
 </template>

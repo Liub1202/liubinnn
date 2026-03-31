@@ -10,8 +10,8 @@ defineProps<{
   <HomeSection
     id="recent-posts"
     eyebrow="最近文章"
-    title="最近写作的一小块切面。"
-    description="这里只展示最新的几篇内容，让首页保持“个人主页优先、内容入口其次”的节奏。"
+    title="先从最近写下的几篇开始。"
+    description="首页先把文章端上来，不急着解释太多。挑一篇顺眼的读下去，就差不多知道这里会写些什么。"
   >
     <div class="grid gap-4">
       <BlogPostCard
